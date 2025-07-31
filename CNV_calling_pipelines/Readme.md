@@ -1,4 +1,4 @@
-## 1. CNV Calling Pipeline
+# 1. CNV Calling Pipeline
 
 This directory documents the CNV (Copy Number Variation) calling process using four tools:
 
@@ -17,7 +17,7 @@ Note: For *readDepth*, the resolution is automatically selected by the tool.
 - **Version:** 0.9.8.4
 - **Resolution:** Automatically determined by the tool
 - **Parameters:** Default
-(see: ./readDepth/readDepth_input/annotations/params)
+(see: ./readDepth/params)
 
 ### **Dependencies**
 
@@ -140,7 +140,9 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -
 - `.CNVs` files: CNV calls used for downstream analysis
 
 
-### References
+---
+
+#### References
 
 1. Miller, C. A., Hampton, O., Coarfa, C. & Milosavljevic, A. 「ReadDepth: a parallel R package for detecting copy number alterations from short sequencing reads」. 『PloS one』 6, e16327, doi:10.1371/journal.pone.0016327 2011.
 2. Klambauer, G. et al. 「cn.MOPS: mixture of Poissons for discovering copy number variations in next-generation sequencing data with a low false discovery rate」. 『Nucleic acids research』 40, e69, doi:10.1093/nar/gks003 2012.
