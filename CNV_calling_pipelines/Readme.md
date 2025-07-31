@@ -109,7 +109,7 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -
 
 ---
 
-# 4. Control-FREEC
+## 4. Control-FREEC
 
 - **Version:** 11.6
 - **Resolutions:** 5k, 25k, and 50k
