@@ -27,7 +27,7 @@ Note: For *readDepth*, the resolution is automatically selected by the tool.
 ### **Command Example**
 
 ```bash
-python readDepth_run.py {input_directory} {annotations_directory} {entrypoint_file} {output_directory}
+python readDepth/readDepth_run.py {input_directory} {annotations_directory} {entrypoint_file} {output_directory}
 ```
 
 ### **Input**
@@ -58,7 +58,7 @@ python readDepth_run.py {input_directory} {annotations_directory} {entrypoint_fi
 ### **Command Example**
 
 ```r
-Rscript cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL} 
+Rscript cn.MOPS/cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL} 
 ```
 
 ### **Input**
