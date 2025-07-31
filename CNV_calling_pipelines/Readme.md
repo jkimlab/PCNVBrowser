@@ -19,25 +19,25 @@ Note: For *readDepth*, the resolution is automatically selected by the tool.
 - **Parameters:** Default
 (see: ./readDepth/params)
 
-### **Dependencies**
+#### **Dependencies**
 
 - Python 3.6
 - R 4.1.1
 
-### **Command Example**
+#### **Command Example**
 
 ```bash
 python readDepth/readDepth_run.py {input_directory} {annotations_directory} {entrypoint_file} {output_directory}
 ```
 
-### **Input**
+#### **Input**
 
 - .bed files (per chromosome)
 - Reference files(see: ./cnv_calling/readDepth_input/annotations/):
     - `gcWinds/` and `mapability/`: provided by the readDepth package
     - `entrypoints`: tab-delimited chromosome metadata (name, length, ploidy)
 
-### **Output**
+#### **Output**
 
 - **`result.dat`**: Processed from `alts.dat`, this file is used for downstream CNV analysis.
 
@@ -51,24 +51,24 @@ python readDepth/readDepth_run.py {input_directory} {annotations_directory} {ent
     - `WL = 5000 / 25000 / 50000`
     - Others default
 
-### **Dependencies**
+#### **Dependencies**
 
 - R 4.1.0
 
-### **Command Example**
+#### **Command Example**
 
 ```r
 Rscript cn.MOPS/cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL} 
 ```
 
-### **Input**
+#### **Input**
 
 - Directory path containing `.bam`, `.bai` files
     
     All BAM files from the same population were placed in a single directory and processed together.
     
 
-### **Output**
+#### **Output**
 
 - Autosomes and sex chromosomes are processed separately using sex-specific priors and combined.
 - `.CNVs`: Per-sample CNV call tables parsed by sample name, used for downstream analysis.
@@ -87,23 +87,23 @@ Rscript cn.MOPS/cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL}
     - `y`: male sample
     - `p`: threads
 
-### **Dependencies**
+#### **Dependencies**
 
 - Python 3.7
 
-### **Command Example**
+#### **Command Example**
 
 ```bash
 cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -n --target-avg-size {i}
 ```
 
-### **Input**
+#### **Input**
 
 - `.bam`, `.bai` files
 - Reference genome (FASTA)
 (see: ./cnv_calling/**Homo_sapiens_assembly38.fasta**)
 
-### **Output**
+#### **Output**
 
 - `.cns` files: used for segmentation and downstream CNV analysis
 
@@ -117,11 +117,11 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -
     - `window = 5000 / 25000 / 50000`
     - Others default
 
-### **Dependencies**
+#### **Dependencies**
 
 - Python 3.6
 
-### **Command Example**
+#### **Command Example**
 
 ```bash
 {freec_dir}/freec -conf {config_file}
@@ -135,7 +135,7 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -
     - GC/mappability files in `perChrom/`
 - Configuration file (auto-generated via Python script; see **example_config.txt**)
 
-### **Output**
+#### **Output**
 
 - `.CNVs` files: CNV calls used for downstream analysis
 
