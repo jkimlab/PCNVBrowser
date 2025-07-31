@@ -27,15 +27,16 @@ Note: For *readDepth*, the resolution is automatically selected by the tool.
 #### **Command Example**
 
 ```bash
-python readDepth/readDepth_run.py {input_directory} {annotations_directory} {entrypoint_file} {output_directory}
+python readDepth/readDepth_run.py {input_path} {annotations_path} {entrypoint_file} {output_path}
+
 ```
 
 #### **Input**
 
-- .bed files (per chromosome)
-- Reference files(see: ./cnv_calling/readDepth_input/annotations/):
-    - `gcWinds/` and `mapability/`: provided by the readDepth package
-    - `entrypoints`: tab-delimited chromosome metadata (name, length, ploidy)
+- input_path: Directory containing BED files (per chromosome) for a single sample.
+- annotations_path: Directory containing params, gcWinds, and mapability files (provided by the readDepth tool)
+- entrypoint_file: Tab-delimited file containing chromosome metadata — e.g., chromosome name, length, and ploidy
+- output_path: Directory where result.dat will be saved
 
 #### **Output**
 
@@ -63,10 +64,11 @@ Rscript cn.MOPS/cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL}
 
 #### **Input**
 
-- Directory path containing `.bam`, `.bai` files
-    
+- bamfile_path: Directory path containing `.bam`, `.bai` files    
     All BAM files from the same population were placed in a single directory and processed together.
-    
+- output_file: Name of the output file
+- sex: "female" or "male"
+- WL: 
 
 #### **Output**
 
@@ -114,7 +116,7 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -
 - **Version:** 11.6
 - **Resolutions:** 5k, 25k, and 50k
 - **Parameters:**
-    - `window = 5000 / 25000 / 50000`
+    - window = Window size
     - Others default
 
 #### **Dependencies**
@@ -129,11 +131,28 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {readfile_path} -
 
 ### **Input**
 
-- `.bam`, `.bai` files
-- Reference files(see: cnv_calling/Homo_sapiens_assembly38.faSize and **perChrom**):
-    - `Homo_sapiens_assembly38.faSize`
-    - GC/mappability files in `perChrom/`
-- Configuration file (auto-generated via Python script; see **example_config.txt**)
+- config_file
+```text
+#config_file
+    [general]
+    chrLenFile = ./Homo_sapiens_assembly38.faSize
+    outputDir = ./output/
+    ploidy = 2
+    window = 50000
+    maxThreads = 10
+    sex = XX
+    chrFiles = ./perChrom/
+    
+    [sample]
+    mateFile = ./HG03805.grch38X30.bam
+    inputFormat = BAM
+    mateOrientation = 0
+    
+    [control]
+    
+    
+    [target]
+```
 
 #### **Output**
 
