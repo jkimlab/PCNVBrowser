@@ -39,7 +39,7 @@ else
 	cut -f1-4 "$tmp" \
 	| awk -v OFS='\t' -v all="$sample_count" -v type="$TYPE" '
 	{
-		freq = sprintf("%.5f", ($4 / all));  # $4 = "이 구간에 겹치는 파일 수"
+		freq = sprintf("%.5f", ($4 / all));  
 		print $1, $2, $3, type, freq;
 	}
 	' > "$outfile"
