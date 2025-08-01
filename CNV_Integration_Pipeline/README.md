@@ -14,7 +14,7 @@
 1. Compute overlapping CNV regions across samples using `bedtools multiinter`.
 2. Calculate frequency of each region** by dividing the number of overlapping samples by the total number of input samples.
 
-The resulting frequency table is saved as `${POP}.freq.bed`.
+The resulting frequency table is saved as `${input_directory}.freq.bed`.
 
 ---
 
