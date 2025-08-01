@@ -85,7 +85,7 @@ Rscript cn.MOPS/cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL}
 #### **Command Example**
 
 ```bash
-cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {ref_path} -n --target-avg-size {i}
+cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {ref_path} -n --target-avg-size {target_avg_size}
 ```
 
 #### **Input**
@@ -93,6 +93,7 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {ref_path} -n --t
 - threade: Number of threads
 - bamfile_path: Directory path containing .BAM, .BAI files
 - ref_path: Directory path containing reference genome (FASTA)
+- target_avg_size: Average bin size for CNV calling
 
 #### **Output**
 
