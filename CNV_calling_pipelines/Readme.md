@@ -45,7 +45,7 @@ python readDepth/readDepth_run.py {input_path} {annotations_path} {entrypoint_fi
 ## 2. cn.MOPS
 
 - **Version:** 1.40.0
-- **Resolutions:** 5k, 25k, and 50k
+- **Resolutions(WL):** 5k, 25k, and 50k
 
 
 #### **Dependencies**
@@ -75,7 +75,7 @@ Rscript cn.MOPS/cn.MOPS_execute.R {bamfile_path} {output_file} {sex} {WL}
 ## 3. CNVkit
 
 - **Version:** 0.9.9
-- **Resolutions:** 5k, 25k, and 50k
+- **Resolutions(--target-avg-size):** 5k, 25k, and 50k
 
 
 #### **Dependencies**
@@ -104,7 +104,7 @@ cnvkit.py batch --method wgs -y -p {threads} {bamfile_path} -f {ref_path} -n --t
 ## 4. Control-FREEC
 
 - **Version:** 11.6
-- **Resolutions:** 5k, 25k, and 50k
+- **Resolutions(window):** 5k, 25k, and 50k
 
 #### **Dependencies**
 
