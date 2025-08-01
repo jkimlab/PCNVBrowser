@@ -1,4 +1,4 @@
-# 1. CNV Calling Pipeline
+# CNV Calling Pipeline
 
 This directory documents the CNV (Copy Number Variation) calling process using four tools:
 
