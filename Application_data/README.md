@@ -2,11 +2,13 @@ This directory provides the application-specific CNV datasets referenced in our 
 
 These files can be used for testing, benchmarking, or reproducing the analyses described in the manuscript.
 
-1. Application2_user_PD_sample.bed
+**1. Application2_user_PD_sample.bed**
     - A simulated dataset combining 721 common CNVs (allele frequency (AF) > 1%) from gnomAD-SV v4.1 [1] and 14 CNVs associated with Parkinson's disease (PD) previously reported in European populations (see Table 1 in [2]).
     - In this file, common CNVs are denoted as `CNV`, whereas PD-associated CNVs are denoted as `DUP` or `DEL`.
-2. Application3_user_Korean_CNV.bed
+
+**2. Application3_user_Korean_CNV.bed**
     - A curated set of 15 CNVs reported as Korean-specific (see Table 2 in [3]).
+
 
 **References**
 
